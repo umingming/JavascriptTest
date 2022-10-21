@@ -14,6 +14,12 @@
         console.log(`My name is ${first} ${last}.`);
         console.log(`1 + 2 = ${1+2}`);
         console.log('1 + 2 = ${1+2}');
+
+        var key = Symbol('key');
+        console.log(typeof key);
+        var obj = {};
+        obj[key] = 'value';
+        console.log(obj[key]);
     </script>
     
 </body>
