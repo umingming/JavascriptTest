@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            name: '이유미',
+            sayHello: function() {
+                console.log(`Hello! My name is ${this.name}`);
+            }
+        };
+
+        console.log(typeof person);
+        console.log(person);
+
+        var person = {
+            firstName: 'YUMI',
+            'last-name': 'LEE'
+        };
+
+        console.log(person);
+
+        var obj = {};
+        var key = 'hello';
+        obj[key] = 'world';
+        console.log(obj);
+    </script>
+</body>
+</html>
