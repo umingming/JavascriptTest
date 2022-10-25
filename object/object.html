@@ -18,6 +18,8 @@
         console.log(typeof person);
         console.log(person);
 
+        person.sayHello();
+
         var person = {
             firstName: 'YUMI',
             'last-name': 'LEE'
@@ -29,6 +31,35 @@
         var key = 'hello';
         obj[key] = 'world';
         console.log(obj);
+
+        var foo = {
+            '': ''
+        };
+        console.log(foo);
+
+        var circle = {
+            radius: 5,
+            getDiameter: function() {
+                return 2 * this.radius;
+            }
+        };
+
+        console.log(circle.getDiameter());
+
+        var person = {
+            name: '이유미'
+        };
+
+        console.log(person.name);
+        console.log(person["name"])
+
+        
+        var person = {
+            firstName: 'YUMI',
+            'last-name': 'LEE'
+        };
+
+        console.log(person['last-name']);
     </script>
 </body>
 </html>
