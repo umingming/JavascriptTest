@@ -76,6 +76,14 @@
         console.log(getStringLength());
         console.log(getStringLength('hi'));
 
+        function getStringLength2(str = '') {
+            // str = str || '';
+            return str.length;
+        }
+
+        console.log(getStringLength2());
+        console.log(getStringLength2('hi'));
+
     </script>
 </body>
 </html>
