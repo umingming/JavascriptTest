@@ -93,6 +93,29 @@
 
         var obj2 = { x, y };
         console.log(obj2);
+
+        var prefix = 'prop';
+        var i = 0;
+        var obj = {};
+
+        obj[prefix + '-' + ++i] = i;
+        obj[prefix + '-' + ++i] = i;
+        obj[prefix + '-' + ++i] = i;
+
+        console.log(obj);
+
+        var prop = 'prop';
+        var obj = {};
+
+        obj[prop] = prop;
+        prop = 'a';
+        obj[prop] = prop;
+        prop = 'b';
+        obj[prop] = prop;
+        
+        console.log(obj);
+
+
     </script>
 </body>
 </html>
