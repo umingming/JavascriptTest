@@ -28,6 +28,45 @@
         if (!'') console.log('true');
         if ('str') console.log('str');
 
+        function isFalsy(flag) {
+            return !flag;
+        }
+
+        function isTruthy(flag) {
+            return !!flag;
+        }
+
+        console.log(isFalsy(undefined));
+        console.log(isFalsy(false));
+        console.log(isFalsy(null));
+        console.log(isFalsy(NaN));
+        console.log(isFalsy(''));
+        console.log(isFalsy(``));
+        console.log(isFalsy(true));
+        console.log(isFalsy('0'));
+        console.log(isFalsy({}));
+        console.log(isFalsy([]));
+
+        console.log(true || 'A');
+        console.log(false || 'A');
+        console.log(true && 'A');
+        console.log(false && 'A');
+
+        var done = true;
+        var msg = '';
+        msg = done && '완료';;
+        // msg = done || '완료';;
+        console.log(msg);
+
+        var done2 = false;
+        var msg2 = '';
+        msg2 = done2 || '미완료';
+        console.log(msg2);
+
+        var elem = null;
+        // var value = elem && elem.value;
+        var value = elem.value;
+        console.log(value);
     </script>
 </body>
 </html>
