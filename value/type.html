@@ -64,9 +64,18 @@
         console.log(msg2);
 
         var elem = null;
-        // var value = elem && elem.value;
-        var value = elem.value;
+        var value = elem && elem.value;
+        // var value = elem.value;
         console.log(value);
+
+        function getStringLength(str) {
+            str = str || '';
+            return str.length;
+        }
+
+        console.log(getStringLength());
+        console.log(getStringLength('hi'));
+
     </script>
 </body>
 </html>
