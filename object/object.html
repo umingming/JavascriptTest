@@ -115,6 +115,34 @@
         
         console.log(obj);
 
+        const prefix2 = 'prop';
+        let j = 0;
+
+        const obj3 = {
+            [`${prefix2}-${++j}`]: j,
+            [`${prefix2}-${++j}`]: j,
+            [`${prefix2}-${++j}`]: j,
+        };
+
+        console.log(obj3);
+
+        
+        var prefix = 'prop';
+        var i = 0;
+
+        var obj = {
+            [`${prefix}-${++i}`]: i,
+            [`${prefix}-${++i}`]: i,
+            [`${prefix}-${++i}`]: i
+        };
+
+        console.log(obj);
+
+        var str = 'string';
+
+        for (var i = 0; i < str.length; i++) {
+            console.log(`str[${i}] : ${str[i]}`);
+        }
 
     </script>
 </body>
