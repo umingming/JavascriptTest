@@ -91,8 +91,12 @@
         var length = str?.length;
         console.log(length);
         
-        var foo = null ?? 'default string';
+        var foo = '' ?? 'default string';
         console.log(foo);
+
+        var foo = '' || 'default string';
+        console.log(foo);
+
 
     </script>
 </body>
