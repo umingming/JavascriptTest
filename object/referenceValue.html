@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = { x: 1, y: 2 };
+        console.log(obj);
+        const copy1 = obj;
+        console.log(copy1);
+        const copy2 = { ... obj };
+        console.log(copy2);
+        const copy3 = { ...obj, z: 3 };
+        console.log(copy3);
+        obj.x = 4;
+        console.log(copy3);
+        console.log(obj);
+
+        console.log(obj === copy1);
+        console.log(obj === copy2);
+        console.log(obj);
+        console.log(copy1);
+        console.log(copy2);
+
+        const _ = require('lodash');
+        const copy5 = _.cloneDeep(obj);
+        console.log(copy5);
+
+    </script>
+</body>
+</html>
