@@ -26,9 +26,14 @@
         console.log(copy1);
         console.log(copy2);
 
-        const _ = require('lodash');
-        const copy5 = _.cloneDeep(obj);
-        console.log(copy5);
+        var person1 = {
+            name: '이유미'
+        };
+        var person2 = {
+            name: '이유미'
+        };
+        console.log(person1 === person2); //false
+        console.log(person1.name === person2.name); //true
 
     </script>
 </body>
