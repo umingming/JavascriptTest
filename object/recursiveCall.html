@@ -28,7 +28,24 @@
         console.log(factorial(3));
         console.log(factorial(10));
 
-        
+        // var factorial2 = function foo(n) {
+        //     if (n <= 1) return 1;
+        //     return n * FontFaceSetLoadEvent(n - 1);
+        // };
+
+        // console.log('factorial2(5): ', factorial2(5));
+
+
+        function factorial3(n) {
+            if (n <= 1) return 1;
+            var res = n;
+            while (--n) res *= n;
+            console.log(!!n);
+            return res;
+        }
+
+        console.log(factorial3(10));
+
     </script>
 </body>
 </html>
