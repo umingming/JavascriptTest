@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function repeat(n) {
+            for (var i = 0; i < n; i++) console.log(i);
+        }
+        repeat(5);
+
+        function repeat2(n) {
+            for (var i = 0; i < n; i++) {
+                if (i % 2) console.log(i);
+            }
+        }
+
+        repeat2(5);
+
+        function repeat3(n, f) {
+            for (var i = 0; i < n; i++) {
+                f(i);
+            }
+        }
+
+        var logAll = function (i) {
+            console.log(i);
+        };
+
+        repeat3(5, logAll);
+
+        var logOdds = function (i) {
+            if (i % 2) console.log(i);
+        };
+
+        repeat3(5, logOdds);
+
+        repeat3(5, function (i) {
+            if (i % 2) console.log(i);
+        });
+
+        var res = [1, 2, 3].map(function (item) {
+            return item * 2;
+        })
+
+        console.log(res);
+
+        res = [1, 2, 3].filter(function (item) {
+            return item % 2;
+        });
+
+        console.log(res);
+
+        res = [5, 3, 4].reduce(function (acc, cur) {
+            return acc + cur;
+        }, 0 );
+
+        console.log(res);
+
+    </script>
+</body>
+</html>

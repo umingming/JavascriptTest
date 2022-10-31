@@ -39,12 +39,28 @@
         function factorial3(n) {
             if (n <= 1) return 1;
             var res = n;
-            while (--n) res *= n;
+            while (--n) res *= n;  //0은 false로 반환되므로, 이를 이용해 조건식을 사용할 수 있음.
             console.log(!!n);
             return res;
         }
 
         console.log(factorial3(10));
+
+        function outer() {
+            var x = 1;
+            function inner() {
+                var y = 2;
+                console.log(x + y);
+            }
+            inner();
+        }
+
+
+        outer();
+
+        // inner();
+
+        
 
     </script>
 </body>
