@@ -38,13 +38,17 @@
         var x = 'global';
 
         function foo2() {
-            var x = 'local';
+            // var x = 'local';
             console.log(x); //local
         }
 
         foo2(); //local
 
         console.log(x); //global
+
+
+        var x = 'test';
+        console.log(x);
     </script>
 </body>
 </html>
