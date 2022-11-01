@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var var1 = 1;
+
+        if (true) {
+            var var2 = 2;
+            if (true) {
+                var var3 = 3;
+            }
+        }
+
+        function foo() {
+            var var4 = 4;
+            bar();
+
+            function bar() {
+                var var5 = 5;
+                console.log(var5);
+            }
+        }
+
+        foo();
+
+        console.log(var1);
+        console.log(var2);
+        console.log(var3);
+        // console.log(var4);
+        // console.log(var5);
+
+        var x = 'global';
+
+        function foo2() {
+            var x = 'local';
+            console.log(x); //local
+        }
+
+        foo2(); //local
+
+        console.log(x); //global
+    </script>
+</body>
+</html>
