@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const strObj = new String('Lee');
+        console.log(typeof strObj);
+        console.log(strObj);
+        const strObj2 = 'Lee';
+        console.log(typeof strObj2);
+        console.log(strObj2);
+
+        const boolObj = new Boolean(true);
+        console.log(typeof boolObj);
+        console.log(boolObj);
+
+        const func = new Function('x', 'return x * x');
+        console.log(typeof func);
+        console.log(func);
+        console.dir(func);
+
+        const arr = new Array(1, 2, 3);
+        console.log(typeof arr);
+        console.log(arr);
+
+        const regExp = new RegExp(/ab+c/i);
+        console.log(typeof regExp);
+        console.log(regExp);
+
+        const date = new Date();
+        console.log(typeof date);
+        console.log(date);
+        
+        function Circle(radius) {
+            this.radius = radius;
+            this.getDiameter = function() {
+                return 2 * this.radius;
+            };
+        }     
+
+        const circle1 = new Circle(5);
+        const circle2 = new Circle(10);
+
+        console.log(circle1.getDiameter());
+        console.log(circle2.getDiameter());
+
+        function foo() {
+            console.log(this);
+        }
+
+        foo();
+
+        const obj = { foo };
+
+        console.log(obj);
+
+        const inst = new foo();
+
+        const circle3 = Circle(15);
+        console.log(circle3);
+        console.log(radius);
+
+        function Circle2(radius) {
+            console.log('this: ', this);
+            return 100;
+        }
+
+        new Circle2();
+        
+        const circle = new Circle2(1);
+        console.log(circle);
+
+        function foo() {};
+
+        foo.prop = 10;
+        foo.method = function() {
+            console.log(this.prop);
+        }
+
+        foo.method();
+        console.log(this.prop);
+
+    </script>
+</body>
+</html>
