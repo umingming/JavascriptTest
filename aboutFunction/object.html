@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const increase = function (num) {
+            return ++num;
+        };
+
+        const decrease = function (num) {
+            return --num;
+        };
+
+        const auxs = { increase, decrease };
+
+        function makeCounter(aux) {
+            let num = 0;
+            return function () {
+                num = aux(num);
+                return num;
+            };
+        }
+
+        const increaser = makeCounter(auxs.increase);
+        console.log(increaser());
+        console.log(increaser());
+        
+        const decreaser = makeCounter(auxs.decrease);
+        console.log(decreaser());
+        console.log(decreaser());
+        console.log(increaser());
+
+        function square(number) {
+            return number * number;
+        }
+
+        console.dir(square);
+
+        console.log(Object.getOwnPropertyDescriptors(square));
+        console.log(Object.getOwnPropertyDescriptor(square, '__proto__'));
+
+        function multiply(x, y) {
+            const iterator = arguments[Symbol.iterator]();
+            console.log(iterator.next());
+            console.log(iterator.next());
+            console.log(iterator.next());
+            return x * y;
+        }
+
+        console.log(multiply());
+        console.log(multiply(1));
+        console.log(multiply(1, 2));
+        console.log(multiply(1, 2, 3));
+
+
+        function sum() {
+            let res = 0;
+
+            for (let i = 0; i < arguments.length; i++) {
+                res += arguments[i];
+            }
+            return res;
+        }
+
+        console.log(sum());
+        console.log(sum(1, 2));
+        console.log(sum(1, 2, 3));
+
+        function sum2() {
+            const array = Array.prototype.slice.call(arguments);
+            return array.reduce(function (pre, cur) {
+                return pre + cur;
+            }, 0);
+        }
+
+        console.log(sum(1, 2));
+        console.log(sum(1, 2, 3));
+
+        function sum3(...args) {
+            return args.reduce((pre, cur) => pre + cur, 0);
+        }
+
+        console.log(sum3(1, 2));
+
+        function foo(func) {
+            return func();
+        }
+
+        function bar() {
+            return 'caller : ' + bar.caller;
+        }
+
+        console.log(foo(bar));
+        console.log(bar());
+
+        console.log(foo.length);
+
+        var namedFunc = function foo() {};
+        console.log(namedFunc.name);
+
+        var anonymousFunc = function() {};
+        console.log(anonymousFunc.name);
+
+        function bar() {}
+        console.log(bar.name);
+
+        const obj = { a: 1 };
+
+        console.log(obj.__proto__ === Object.prototype);
+        console.log(obj.hasOwnProperty('a'));
+        console.log(obj.hasOwnProperty('__proto__'));
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Circle(radius) {
+            this.radius = radius;
+            this.getArea = function () {
+                return Math.PI * this.radius ** 2;
+            };
+        }
+
+        const circle1 = new Circle(1);
+        const circle2 = new Circle(1);
+
+        console.log(circle1.getArea === circle2.getArea);
+        console.log(circle1.getArea() === circle2.getArea());
+
+        function Circle2(radius) {
+            this.radius = radius;
+        }
+
+        Circle2.prototype.getArea = function() {
+            return Math.PI * this.radius ** 2;
+        };
+
+        const circle3 = new Circle2(1);
+        const circle4 = new Circle2(1);
+
+        console.log(circle3.getArea === circle4.getArea);
+        console.log(circle3.getArea() === circle4.getArea());
+
+        console.log(circle3.getArea());
+        console.log(circle4.getArea());
+
+
+        Circle2.prototype.getRadius = function() {
+            return this.radius;
+        };
+
+        const circle5 = new Circle2(2);
+        console.log(circle3.getRadius());
+
+        console.log(circle3.__proto__);
+        console.log(Circle2.prototype);
+
+        const person = { name: 'Lee' };
+
+        console.log(person.__proto__);
+
+        const obj = {};
+        const parent = { x: 1 };
+        console.log(obj.x);
+
+        console.log(obj.__proto__);
+        
+        obj.__proto__ = parent;
+        console.log(obj.__proto__);
+
+        console.log(obj.x);
+
+
+        const person2 = { name: 'Lee' };
+        console.log(person2.hasOwnProperty('__proto__'));
+
+        console.log(person2.__proto__);
+
+        const Person = name => {
+            this.name = name;
+        };
+
+        console.log(Person.hasOwnProperty('prototype'));
+        console.log(Person.prototype);
+
+        const obj2 = {
+            foo2() {}
+        };
+        console.log(obj2.foo2.hasOwnProperty('prototype'));
+        console.log(obj2.foo2.prototype);
+
+        const test = function test() {
+            console.log('test');
+        };
+        const test2 = function() {
+            console.log('test');
+        };
+
+        console.log(test.hasOwnProperty('prototype'));
+        console.log(test2.hasOwnProperty('prototype'));
+
+
+        function Person1(name) {
+            this.name = name;
+        }
+
+        const me = new Person1('이유미');
+        console.log(me.name);
+
+        console.log(Person1.prototype === me.__proto__);
+
+        console.log(Person1 === me.constructor);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
