@@ -26,6 +26,43 @@
             return new Function('x', 'y', `return x + y + ${a}`);
         }());
         console.log(add2(1, 2));
+
+        const obj = new Object();
+        console.log(obj.constructor === Object);
+        const add4 = new Function('a', 'b', 'return a + b');
+        console.log(add4.constructor === Function);
+
+        const obj2 = {};
+        console.log(obj2.constructor === Object);
+        const add5 = function (a, b) { return a + b; };
+        console.log(add5.constructor);
+
+        const arr = [1, 2, 3];
+
+        console.log(arr.constructor);
+
+        const regexp = /is/ig;
+        console.log(regexp.constructor);
+
+
+        class Foo extends Object {}
+        console.log(new Foo());
+
+        let obj10 = new Object(123);
+        console.log(obj10);
+
+
+        function foo3() {}
+
+        console.log(foo3.constructor === Function);
+
+
+        console.log(Person.prototype);
+
+        function Person(name) {
+            this.name = name;
+        }
+
     </script>
 </body>
 </html>
