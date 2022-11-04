@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Person = (function () {
+            function Person(name) {
+                this.name = name;
+            }
+
+            Person.prototype.sayHello = function () {
+                console.log(`Hi! My name is ${this.name}`);
+            };
+
+            return Person;
+        }());
+
+        const me = new Person('Lee');
+
+        me.sayHello = function () {
+            console.log(`Hey! My name is ${this.name}`);
+        };
+
+        me.sayHello();
+
+        delete me.sayHello;
+
+        me.sayHello();
+        delete me.sayHello;
+
+        me.sayHello();
+        
+        delete Person.prototype.sayHello;
+
+        const Person2 = (function () {
+            function Person(name) {
+                this.name = name;
+            }
+
+            Person.prototype = {
+                sayHello() {
+                    console.log(`Hi! My name is ${this.name}`);
+                }
+            };
+            return Person;
+        }());
+
+        const you = new Person2('윰');
+
+        console.log(you.constructor);
+
+
+        const Person3 = (function () {
+            function Person(name) {
+                this.name = name;
+            }
+
+            Person.prototype = {
+                constructor: Person,
+                sayHello() {
+                    console.log(`Hi! My name is ${this.name}`);
+                }
+            };
+
+            return Person;
+        }());
+
+        const him = new Person3('힘');
+
+        console.log(him.constructor === Person3);
+        console.log(him.constructor === Object);
+
+
+        function Person4(name) {
+            this.name = name;
+        }
+
+        const her = new Person4('유미');
+
+        const parent = {
+            sayHello() {
+                console.log(`Hi! My name is ${this.name}`);
+            }
+        };
+
+        // her.sayHello();
+
+        Object.setPrototypeOf(her, parent);
+
+        her.sayHello();
+
+        console.log(her.constructor === Person);
+        console.log(her.constructor === Object);
+
+
+        function Person5(name) {
+            this.name = name;
+        }
+
+        const kim = new Person5('kim');
+
+        const parent5 = {
+            constructor: Person5,
+            sayHello() {
+                console.log(`Hi! My name is ${this.name}`);  
+            }
+        };
+
+        Person5.prototype = parent5;
+
+        Object.setPrototypeOf(kim, parent5);
+
+        kim.sayHello();
+
+        console.log(kim.constructor === Person5);
+        console.log(kim.constructor === Object);
+
+        console.log(Person5.prototype === Object.getPrototypeOf(kim));
+
+
+    </script>
+</body>
+</html>
