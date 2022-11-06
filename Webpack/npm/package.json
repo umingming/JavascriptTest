@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.6.1"
+    "jquery": "^3.6.1",
+    "jquery-ui": "^1.13.2"
+  },
+  "devDependencies": {
+    "vue": "^3.2.41"
   }
 }
