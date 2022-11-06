@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = Object.create(null);
+        console.log(Object.getPrototypeOf(obj) === null);
+        // console.log(obj.toString());
+        console.log(obj.__proto__);
+        console.log(Object.hasOwnProperty('prototype'));
+        console.log(obj.constructor);
+
+        obj = Object.create(Object.prototype);
+        console.log(obj.toString());
+        console.log(Object.getPrototypeOf(obj) === Object.prototype);
+        
+        obj = Object.create(Object.prototype, {
+            x: { value: 1, writable: true, enumerable: true, configurable: true }
+        });
+        
+        console.log(obj.x);
+        console.log(Object.getPrototypeOf(obj) === Object.prototype);
+
+        const myProto = { x: 10 };
+        obj = Object.create(myProto);
+        console.log(obj.x);
+
+        console.log(Object.getPrototypeOf(obj) === myProto);
+
+        function Person(name) {
+            this.name = name;
+        }
+
+        obj = Object.create(Person.prototype);
+        obj.name = 'Lee';
+        console.log(Object.getPrototypeOf(obj) === Person.prototype);
+
+
+    </script>
+</body>
+</html>
