@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const x = 1;
+        function foo() {
+            'use strict';
+            eval('var x = 2; console.log(x);');
+            console.log(x);
+        }
+
+        foo();
+        // console.log(x);
+
+        function foo2() {
+            eval('var x = 2; console.log(x);');
+            console.log(x);
+            eval('const x = 3; console.log(x);');
+            console.log(x);
+        }        
+        foo2();
+        console.log(x);
+
+
+        console.log(isFinite(0));
+        console.log(isFinite(NaN));
+
+        console.log(isNaN(NaN));
+        console.log(isNaN(10));
+        console.log(isNaN('10'));
+        console.log(isNaN(undefined));
+        console.log(isNaN({}));
+
+        console.log(parseFloat('40 years'));
+        console.log(parseFloat('d 40 years'));
+
+        console.log(parseInt('10', 2));
+        console.log(parseInt('10', 8));
+        console.log(parseInt('10', 10));
+        console.log(parseInt('2', 10));
+        console.log(parseInt('3', 2));
+
+        const test = 15;
+        console.log(test.toString(2));
+
+        console.log(parseInt('43 32 32'));
+        console.log(parseInt(' 3    '));
+
+
+    </script>
+</body>
+</html>
