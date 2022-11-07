@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+    </script>
+    <script>
+        // function foo() {
+        //     x = 10;
+        // }
+        // foo();
+        // console.log(x);
+
+        (function () {
+            // 'use strict';
+            // function foo() {
+            //     x = 10;
+            // }
+            // foo();
+            // console.log(x);
+            var x = 1;
+
+            function foo(a, a) {
+                return a + a;
+                // delete a;
+            }
+
+            console.log(foo(3, 2));
+
+            // with({ x: 1}) {
+            //     console.log(x);
+            // }
+        }());
+
+        // console.log(x);
+
+        with({ x: 3 }) {
+            console.log(x);
+        }
+
+        (function (a) {
+            // 'use strict';
+
+            function foo() {
+                console.log(this);
+            }
+            foo();
+
+            function Foo() {
+                console.log(this);
+            }
+            new Foo();
+
+            a = 2;
+            console.log(arguments);
+        }());
+    </script>
+</body>
+</html>
