@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(globalThis);
+        console.log(this);
+        console.log(window);
+        console.log(self);
+        
+        console.log(window.parseInt('F', 16));
+
+        var foo = 1;
+        console.log(window.foo);
+
+        bar = 2;
+        console.log(window.bar);
+
+        function baz() { return 3; }
+
+        console.log(window.baz());
+
+        console.log(-3/0);
+        console.log(typeof Infinity);
+
+        console.log(window.undefined);
+
+        console.log(undefined);
+
+        console.log(eval('1 + 2;'));
+        console.log(eval('var x = 5;'));
+
+        const o = eval('({ a: 1 })');
+        console.log(o);
+
+        const f = eval('(function() {return 1;})');
+        console.log();
+
+        console.log(eval('1 + 2; 3 + 4;'));
+
+        const y = 1;
+        function foo2() {
+            eval('var y = 2;');
+            console.log(y);
+        }
+
+        foo2();
+        console.log(y);
+
+
+        
+
+    </script>
+</body>
+</html>
