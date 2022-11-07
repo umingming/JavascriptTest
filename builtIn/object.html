@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const strObj = new String('Lee');
+        console.log(typeof strObj);
+
+        const numObj = new Number(123);
+        console.log(typeof numObj);
+
+        const func = new Function('x', 'return x*x');
+        console.log(func(3));
+        console.log(typeof func);
+
+        const regExp = new RegExp(/ab+c/i);
+        console.log(typeof regExp);
+
+        console.log(Object.getPrototypeOf(strObj));
+        console.log(String.prototype);
+
+        const numObj2 = new Number(1.5);
+        console.log(numObj2.toFixed());
+        const num = 1.5;
+        console.log(num);
+        console.log(num.toFixed());
+        console.log(Number.isInteger(num));
+        console.log(Number.isInteger(numObj));
+        console.log(Number.isInteger(numObj2));
+
+        const str = 'leeyumi';
+        console.log(str.length);
+        console.log(str.toUpperCase());
+        console.log(typeof str);
+
+        console.log(Object.getPrototypeOf(str));
+        console.log(Object.getPrototypeOf(strObj));
+
+        const str2 = 'hello';
+        str2.name = 'Lee';
+
+        console.log(str2.name);
+
+        console.log(typeof num.toFixed().__proto__);
+
+    </script>
+</body>
+</html>
