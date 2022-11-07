@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name: 'Lee',
+            address: 'Seoul'
+        };
+
+        console.log('name' in person);
+        console.log('address' in person);
+        console.log('umi' in person);
+        console.log('toString' in person);
+        console.log('toString' in Object);
+
+        console.log(Reflect.has(person, 'name'));
+        console.log(Reflect.has(person, 'toString'));
+
+        console.log(person.hasOwnProperty('name'));
+        console.log(person.hasOwnProperty('age'));
+        console.log(person.hasOwnProperty('address'));
+        console.log(person.hasOwnProperty('toString'));
+
+        for (const key in person) {
+            console.log(`${key}: ${person[key]}`);
+        }
+    </script>
+</body>
+</html>
