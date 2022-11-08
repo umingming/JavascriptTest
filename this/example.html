@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        const circle = {
+            radius: 5,
+            getDiameter() {
+                return 2 * this.radius;
+            }
+        };
+        
+        console.log(circle.getDiameter());
+
+        function Circle(radius) {
+            this.radius = radius;
+        }
+        
+        Circle.prototype.getDiameter = function () {
+            return 2 * this.radius;
+        };
+
+        const circle2 = new Circle(5);
+        console.log(circle2.getDiameter());
+
+        console.log(this);
+        function square(number) {
+            console.log(this);
+            return number * number;
+        }
+
+        console.log(square(2));
+
+        const person = {
+            name: 'Lee',
+            getName() {
+                console.log(this);
+                return this.name;
+            }
+        };
+
+        console.log(person.getName());
+
+        function Person(name) {
+            this.name = name;
+            console.log(this);
+        }
+
+        const me = new Person('Lee');
+
+        var value = 1;
+        const obj = {
+            value: 100,
+            foo() {
+                console.log("foo's this: ", this);
+
+                setTimeout(function () {
+                    console.log("callback's this: ", this);
+                    console.log("callback's this.value: ", this.value);
+                }, 100)
+                console.log("foo's this.value: ", this.value);
+
+                function bar() {
+                    console.log("bar's this: ", this);
+                    console.log("bar's this.value: ", this.value);
+                }
+
+                bar();
+
+                const that = this;
+                setTimeout(function () {
+                    console.log(that.value);
+                    console.log(this.value);
+                })
+            }
+        };
+
+        obj.foo();
+
+    </script>
+</body>
+</html>
