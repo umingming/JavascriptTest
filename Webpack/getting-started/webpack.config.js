@@ -4,7 +4,7 @@ module.exports = {
     mode: 'none',
     entry: './src/index.js',
     output: {
-        filename: 'test.js',
+        filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
     }
 };
