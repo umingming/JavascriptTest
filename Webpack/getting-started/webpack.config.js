@@ -1,6 +1,6 @@
 var path = require('path');
 
-module.export = {
+module.exports = {
     mode: 'none',
     entry: './src/index.js',
     output: {
