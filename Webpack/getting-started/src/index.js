@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import _ from 'lodash'; 
+// package.json 에서 설정함.
 
 function component() {
     var element = document.createElement('div');
