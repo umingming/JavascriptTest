@@ -1,4 +1,4 @@
-import _ from 'lodash'; 
+// import _ from 'lodash'; 
 // var _ = require('lodash'); 와 같음
 // package.json 에서 설정함.
 
