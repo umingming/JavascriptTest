@@ -33,7 +33,7 @@ colInfoList.forEach(i => {
     console.log(getVariableStr(i))
 });
 
-console.log();
+console.log("\npublic List<UserDefineColumn> udfs = super.userDefineFields;");
 pkList.forEach(i => {
     let name = i.split("	")[1];
     let type = i.split("	")[2].replace("TimeStamp", "Date").replace("Double", "String");
