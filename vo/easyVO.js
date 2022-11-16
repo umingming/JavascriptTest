@@ -33,7 +33,8 @@ colInfoList.forEach(i => {
     console.log(getVariableStr(i))
 });
 
-console.log("\npublic List<UserDefineColumn> udfs = super.userDefineFields;");
+console.log("\npublic List<UserDefineColumn> udfs = super.userDefineFields;\n");
+
 pkList.forEach(i => {
     let name = i.split("	")[1];
     let type = i.split("	")[2].replace("TimeStamp", "Date").replace("Double", "String");
@@ -41,8 +42,7 @@ pkList.forEach(i => {
     console.log(`this.${name} = s${name.replace(/^[a-z]/, char => char.toUpperCase())};`);
 });
 
-console.log();
-console.log(paramList.toString().trim());
+console.log("\n" + paramList.toString().trim());
 
 
 // const readline = require("readline");
