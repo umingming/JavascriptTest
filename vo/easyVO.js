@@ -1,25 +1,7 @@
-let ddl = `POSQueueTimeHistory	factoryName	String	Y
-POSQueueTimeHistory	processFlowName	String	Y
-POSQueueTimeHistory	processFlowVersion	String	Y
-POSQueueTimeHistory	stepSequence	String	Y
-POSQueueTimeHistory	processOperationName	String	Y
-POSQueueTimeHistory	conditionId	String	Y
-POSQueueTimeHistory	channelId	String	Y
-POSQueueTimeHistory	timeKey	String	Y
-POSQueueTimeHistory	eventTime	TimeStamp	N
-POSQueueTimeHistory	eventName	String	N
-POSQueueTimeHistory	eventUser	String	N
-POSQueueTimeHistory	fromEventName	String	N
-POSQueueTimeHistory	toMainPfName	String	N
-POSQueueTimeHistory	toMainPfVersion	String	N
-POSQueueTimeHistory	toStepSequence	String	N
-POSQueueTimeHistory	toPoName	String	N
-POSQueueTimeHistory	toEventName	String	N
-POSQueueTimeHistory	queueType	String	N
-POSQueueTimeHistory	warningTimeDuration	Long	N
-POSQueueTimeHistory	queueTimeDuration	Long	N
-POSQueueTimeHistory	warningId	String	N
-POSQueueTimeHistory	alarmId	String	N`
+let ddl = `NCUserSection	userId	String	Y
+NCUserSection	sectionName	String	Y
+NCUserSection	createTime	TimeStamp	N
+NCUserSection	createUser	String	N`;
 let colInfoList = ddl.split(`
 `);
 let pkList = [];
