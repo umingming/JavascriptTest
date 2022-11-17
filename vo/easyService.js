@@ -4,9 +4,9 @@
     - 객체 변수 앞에 소문자..흠..
 */
 
-let typeName = 'TFSPolicy';
-let methodTypeName = 'TFSPolicy';
-let objectName = 'tfsPolicy';
+let typeName = 'NCSelectWaferByLot';
+let methodTypeName = 'SelectWaferByLot';
+let objectName = 'selectWaferByLot';
 
 console.log(`final QueryGeneratorService sqlService;
 final QueryService queryService;
@@ -78,6 +78,8 @@ public ${typeName} validationRemove${typeName}(Map<String, Object> keyData, Stri
     ${objectName}.getData();
     return ${objectName};
 }\n\n`);
+
+console.log(`private final String typeName${methodTypeName} = "${typeName}";\n\n`)
 
 console.log(`public static ${methodTypeName}Service get${methodTypeName}Service() throws NoSuchAlgorithmException
 {
