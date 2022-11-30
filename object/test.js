@@ -28,5 +28,7 @@ console.log(num2.NUM);
 num2.NUM = [1, 2, 3]
 
 console.log(num2.NUM);
+console.log(num2["NUM"]);
 console.log(getInfo("유미").NUM);
+console.log(getInfo("유진").NUM);
 console.log(num);
