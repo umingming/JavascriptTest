@@ -1,4 +1,4 @@
-function getNum() {
+var Num = (function () {
     var num = 1;
     return {
         increase() {
@@ -8,10 +8,10 @@ function getNum() {
             return --num;
         }
     };
-}
+}());
 
-var num1 = getNum();
-var num2 = getNum();
+var num1 = Num;
+var num2 = Num;
 
 console.log(num1.increase());
 console.log(num1.increase());
