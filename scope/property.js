@@ -24,9 +24,12 @@ Object.defineProperty(person, 'fullName', {
 		return `${this.firstName} ${this.lastName}`;
 	}
 });
-console.log(Object.getOwnPropertyDescriptor(person, 'fullName'));
+// console.log(Object.getOwnPropertyDescriptor(person, 'fullName'));
 
-console.log(person);
-console.log(Object.getOwnPropertyDescriptors(person));
-Object.seal(person);
-console.log(Object.getOwnPropertyDescriptors(person));
+// console.log(person);
+// console.log(Object.getOwnPropertyDescriptors(person));
+// Object.seal(person);
+console.log(Object.getOwnPropertyDescriptor(person, 'age'));
+
+Object.defineProperty(person, 'age', { enumerable: false});
+console.log(Object.getOwnPropertyDescriptor(person, 'age'));
