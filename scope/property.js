@@ -12,3 +12,16 @@ console.log(descriptor);
 console.log(Object.keys(person));
 person.lastName = 'Kim';
 console.log(person.lastName);
+
+// Object.defineProperty(person, 'lastName', {
+// 	value: 'Lee'
+// });
+//{ value: undefined, writable: false, enumerable: false, configurable: false }
+
+
+Object.defineProperty(person, 'fullName', {
+	get() {
+		return `${this.firstName} ${this.lastName}`;
+	}
+});
+console.log(Object.getOwnPropertyDescriptor(person, 'fullName'));
