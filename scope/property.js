@@ -33,3 +33,10 @@ console.log(Object.getOwnPropertyDescriptor(person, 'age'));
 
 Object.defineProperty(person, 'age', { enumerable: false});
 console.log(Object.getOwnPropertyDescriptor(person, 'age'));
+
+person.address = {
+    city: 'Seoul'
+};
+
+console.log(person);
+
