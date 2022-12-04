@@ -25,3 +25,8 @@ Object.defineProperty(person, 'fullName', {
 	}
 });
 console.log(Object.getOwnPropertyDescriptor(person, 'fullName'));
+
+console.log(person);
+console.log(Object.getOwnPropertyDescriptors(person));
+Object.seal(person);
+console.log(Object.getOwnPropertyDescriptors(person));
