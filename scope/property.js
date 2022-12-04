@@ -40,3 +40,6 @@ person.address = {
 
 console.log(person);
 
+Object.freeze(person);
+console.log(Object.isFrozen(person));
+console.log(Object.isFrozen(person.address));
