@@ -1,7 +1,11 @@
-let ddl = `NCUserSection	userId	String	Y
-NCUserSection	sectionName	String	Y
-NCUserSection	createTime	TimeStamp	N
-NCUserSection	createUser	String	N`;
+let ddl = `NCSorterContamination	functionName	String	Y
+NCSorterContamination	position	Long	Y
+NCSorterContamination	description	String	N
+NCSorterContamination	currPosProcessType	String	N
+NCSorterContamination	currLotContamination	String	N
+NCSorterContamination	toLotContamination	String	N
+NCSorterContamination	createUser	String	N
+NCSorterContamination	createTime	TimeStamp	N`;
 let colInfoList = ddl.split(`
 `);
 let pkList = [];
