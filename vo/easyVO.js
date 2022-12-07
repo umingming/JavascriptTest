@@ -1,11 +1,7 @@
-let ddl = `NCSorterContamination	functionName	String	Y
-NCSorterContamination	position	Long	Y
-NCSorterContamination	description	String	N
-NCSorterContamination	currPosProcessType	String	N
-NCSorterContamination	currLotContamination	String	N
-NCSorterContamination	toLotContamination	String	N
-NCSorterContamination	createUser	String	N
-NCSorterContamination	createTime	TimeStamp	N`;
+let ddl = `LocaleResource	systemName	String	Y
+LocaleResource	resourceType	String	Y
+LocaleResource	resourceName	String	Y
+LocaleResource	description	String	N`;
 let colInfoList = ddl.split(`
 `);
 let pkList = [];
