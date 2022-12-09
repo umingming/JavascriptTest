@@ -1,7 +1,8 @@
-let ddl = `LocaleResource	systemName	String	Y
-LocaleResource	resourceType	String	Y
-LocaleResource	resourceName	String	Y
-LocaleResource	description	String	N`;
+let ddl = `LocaleResourceValue	localeName	String	Y
+LocaleResourceValue	systemName	String	Y
+LocaleResourceValue	resourceType	String	Y
+LocaleResourceValue	resourceName	String	Y
+LocaleResourceValue	resourceValue	String	N`;
 let colInfoList = ddl.split(`
 `);
 let pkList = [];
