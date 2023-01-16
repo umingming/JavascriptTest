@@ -1,8 +1,13 @@
-let ddl = `LocaleResourceValue	localeName	String	Y
-LocaleResourceValue	systemName	String	Y
-LocaleResourceValue	resourceType	String	Y
-LocaleResourceValue	resourceName	String	Y
-LocaleResourceValue	resourceValue	String	N`;
+let ddl = `NCSeasonJob	machineName	String	Y
+NCSeasonJob	jobIndex	String	Y
+NCSeasonJob	jobType	String	N
+NCSeasonJob	maxLimitValue	Long	N
+NCSeasonJob	fromRecipe	String	N
+NCSeasonJob	toRecipe	String	N
+NCSeasonJob	alarmID	String	N
+NCSeasonJob	createTime	TimeStamp	N
+NCSeasonJob	createUser	String	N
+NCSeasonJob	lastModifiedTimeKey	String	N`;
 let colInfoList = ddl.split(`
 `);
 let pkList = [];

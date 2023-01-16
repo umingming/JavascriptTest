@@ -8,3 +8,9 @@ console.log(Object.getPrototypeOf(obj));
 
 Object.setPrototypeOf(obj, parent);
 console.log(Object.getPrototypeOf(obj));
+
+console.log((function () {}).hasOwnProperty('prototype'));
+console.log(({}).hasOwnProperty('prototype'));
+
+console.log((num => { this.num = num }).hasOwnProperty('prototype'));
+console.log(({foo(){}}).hasOwnProperty('prototype'));
