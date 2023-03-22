@@ -54,9 +54,14 @@
         const $text = apple.firstChild;
         $text.nodeValue = "apple!";
 
-        apple.textContent = "Apple~";
+        apple.innerHTML = "<b>Apple~</b>";
 
+        $fruits.innerHTML += '<li>Peach</li>'
 
+        $fruits.insertAdjacentHTML('beforebegin', 'beforebegin')
+        $fruits.insertAdjacentHTML('afterbegin', 'afterbegin')
+        $fruits.insertAdjacentHTML('beforeend', 'beforeend')
+        $fruits.insertAdjacentHTML('afterend', 'afterend')
         
     </script>
 </body>
