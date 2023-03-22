@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #apple {
+            color: red !important;
+        }
+        .blue {
+            color: blue !important;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <ul id="fruits">
+        <li id="apple" class="fruit">Apple</li>
+        <li id="banana" class="fruit">Banana</li>
+        <li id="orange" class="fruit">Orange</li>
+    </ul>
+    <script>
+        const $input = document.querySelector('input');
+        const $el = document.getElementById('banana');
+        $el.style.color = 'red';
+        apple.style.color = 'orange';
+        const $elems = document.getElementsByTagName('li');
+        [...$elems].forEach(el => {el.style.color = 'red'});
+        console.log($input);
+        console.log(Object.getPrototypeOf($input));
+        console.log(HTMLInputElement.prototype);
+
+        const $fruits = document.getElementById('fruits');
+        const $lisFromFruits = $fruits.getElementsByTagName('li');
+        [ ...$lisFromFruits ].forEach(el => { el.style.color = 'pink' })
+
+        const $elByClass = document.getElementsByClassName('fruit');
+        [ ...$elByClass ].forEach(el => { el.style.color = 'blue'; });
+
+        const $fruitFromFruits = $fruits.getElementsByClassName('fruit');
+        [ ...$fruitFromFruits ].forEach(el => { el.style.color = 'green'; });
+
+        const $banana = document.querySelector('#banana');
+        $banana.style.color = 'yellow';
+
+        const $fruitsByQuerySelectorAll = document.querySelectorAll('.fruit');
+        $fruitsByQuerySelectorAll.forEach(el => { el.style.color = 'blue '});
+
+        const $elsFromFruits = $fruits.querySelectorAll('*');
+        $elsFromFruits.forEach(el => { el.style.color = 'pink'});
+
+        console.log($banana.matches('#fruits > .banana'));
+
+        // for (let i of $lisFromFruits) {
+        //     setTimeout(() => {
+        //         i.className = 'blue';
+        //     }, 2000)
+        // }
+        
+        // for (let i = 0; i < $lisFromFruits.length; i++) {
+        //     setTimeout(() => {
+        //         $lisFromFruits[i].className = 'blue';
+        //     }, 2000)
+        // }
+
+        $lisFromFruits[2].className = 'blue';
+        setTimeout(() => {
+            $lisFromFruits[1].className = 'blue';
+        }, 2000)
+        </script>
+</body>
+</html>
