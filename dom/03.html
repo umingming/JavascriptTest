@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul id="fruits">
+        <li class="red" id="apple">Apple</li>
+        <li class="red">Banana</li>
+        <li class="red">Orange</li>
+    </ul>
+    <input type="text" id="input">
+    <script>
+        const $elems = document.getElementsByClassName('red');
+
+        // for (let i = 0; i < $elems.length; i++) {
+        //     $elems[i].className = 'blue';
+        // }
+
+        // for (let i = $elems.length - 1; i >= 0; i--) {
+        //     $elems[i].className = 'blue';
+        // }
+        // while ($elems.length > 0) {
+        //     $elems[0].className = 'blue';
+        // }
+
+        const $elems2 = document.querySelectorAll('.red');
+        // $elems[0].className = 'blue';
+        // $elems[0].className = 'blue';
+        // $elems2.forEach(el => { el.className = 'blue' });
+
+        const $fruits = document.getElementById('fruits');
+        const $elsFromFruits = $fruits.querySelectorAll('.red');
+        $elsFromFruits.forEach(el => { el.className = 'blue' });
+
+        const { childNodes } = $fruits;
+        // [...childNodes].forEach(node => {
+        //     $fruits.removeChild(node);
+        // })
+        console.log("childNodes: ", childNodes);
+        
+        input.value = apple.nodeType;
+
+        const $text = apple.firstChild;
+        $text.nodeValue = "apple!";
+
+        apple.textContent = "Apple~";
+
+
+        
+    </script>
+</body>
+</html>
