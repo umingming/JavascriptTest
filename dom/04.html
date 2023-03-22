@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+    </ul>
+</body>
+<script>
+    const $li = document.createElement("li");
+    // const textNode = document.createTextNode("Banana");
+
+    // $li.appendChild(textNode);
+    $li.textContent = "Banana!";
+
+    const $fragment = document.createDocumentFragment();
+
+    ['Apple', 'Banana', 'Orange'].forEach(text => {
+        const $li = document.createElement("li");
+        const textNode = document.createTextNode(text);
+        $li.appendChild(textNode);
+        $fragment.appendChild($li);
+        fruits.appendChild($li);
+    })
+    fruits.appendChild($fragment);
+
+
+    const $li2 = document.createElement('li');
+    $li2.appendChild(document.createTextNode('Peach'));
+    fruits.insertBefore($li2, null);
+    
+    const [$apple, $banana, ] = fruits.children;
+    fruits.appendChild($apple);
+    fruits.appendChild($banana);
+
+    const $shallowClone = $apple.cloneNode();
+    $shallowClone.textContent = 'Berry'
+    fruits.appendChild($shallowClone);
+    const $deepClone = $apple.cloneNode(true);
+    fruits.appendChild($deepClone);
+
+    $apple.textContent = "Apple?";
+    const $newChild = document.createElement('li');
+    $newChild.textContent = 'Apple!';
+    
+    fruits.replaceChild($newChild, $apple);
+    $apple.textContent = "Apple?";
+    fruits.removeChild($apple);
+    fruits.removeChild(fruits.firstElementChild);
+
+</script>
+</html>
