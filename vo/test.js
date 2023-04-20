@@ -1,12 +1,12 @@
-const obj = {
+const obj = {   
     "appHeader": {
         "welcome":"welcome",
         "title":"FactoryModeler",
         "modalLogout": {
             "headerTitle": "Logout",
-            "bodyTitle1": "要退出吗？",
+            "bodyTitle1": "Are you sure you want to Log out?",
             "bodyTitle2": "Log out?",
-            "bodyContent": "移动到登录界面。",
+            "bodyContent": "Go to the login Page",
             "footerButtonClose": "Close",
             "footerButtonOk": "Ok"
         },
@@ -25,8 +25,8 @@ const obj = {
     "main": {
         "navigation": "Flow Navigation",
         "favorite": "Favorite Menu",
-        "memoModify": "修改Memo",
-        "writeMemo": "请做简要记录..."
+        "memoModify": "Memo modify",
+        "writeMemo": "Please write a memo..."
     },
     "designer": {
         "title":"ProcessFlowDesigner",
@@ -52,8 +52,8 @@ const obj = {
         "nodeTag": "Node Tag",
         "propertiesPanel":"Properties Panel",
         "wait":"Waiting ...",
-        "selectFlow":"请选择ProcessFlow。",
-        "gotoFlow":"移动到注册ProcessFlow",
+        "selectFlow":"Please select ProcessFlow.",
+        "gotoFlow":"Go to Register ProcessFlow",
         "processing":"Progressing"
     },
     "factory": {
@@ -80,7 +80,7 @@ const obj = {
         "recipeParameterDefinition": "RecipeParameterDefinition",
         "definitonButton": "Recipe Parameter Definition",
         "posPolicyButton": "POSPolicy"
-},
+    },
     "reasonCode": {
         "title" : "ReasonCode"
     },
@@ -166,7 +166,7 @@ const obj = {
         "duration": "Duration",
         "informType": "InformType",
         "boundary": "Boundary",
-        "noDataToApply": "没有数据可以更改。"
+        "noDataToApply": "There is no data to change."
     },
     "machineAlarmDef" : {
         "title": "MachineAlarmDef"
@@ -182,8 +182,8 @@ const obj = {
     },
     "objectTypeDef": {
         "title": "ObjectTypeDef",
-        "warningCheckFlag": "因为Flag为 N，所以无法使用。",
-        "warningCheckOperationData": "ObjectOperationDef 请先添加数据"
+        "warningCheckFlag": "Cannot use because Flag is N.",
+        "warningCheckOperationData": "Please add ObjectOperationDef data first."
     },
     "objectBehavior": {
         "title": "ObjectBehavior",
@@ -214,22 +214,22 @@ const obj = {
         "posPolicyConditionDef": "POSPolicyConditionDef",
         "posPolicyConditionDefView": "POSPolicyConditionDef (VIEW)",
         "posPolicyConditionDefSearch": "POSPolicyConditionDef (SEARCH)",
-        "accessTypeCondition" : "连接类型 0: 增加 / 连接类型 1: 增加, 修改, 删除",
-        "errorModifyCondition" : "请选择连接类型为 1 的 data。",
-        "errorDeleteCondition" : "请选择连接类型为 1的 data。",
+        "accessTypeCondition" : "AccessType 0: create / AccessType 1: create, modify, delete",
+        "errorModifyCondition" : "Please select other data that access type is 1.",
+        "errorDeleteCondition" : "Please select only data that access type is 1.",
         "noData" : "Not exist policy data.",
-        "notExistHistoryName" : "因为History Table 名为空，所以无法增加 data。"
+        "notExistHistoryName" : "You can't create data because history table name is null."
     },
     "enumDef" : {
         "title": "EnumDef",
-        "errorModifyCondition" : "请选择连接类型为 1 或是 2的其他  EnumDef data。",
-        "errorDeleteCondition" : "[Access type 0, 1 does not have permission to delete.] <br/> <font style='font-size:120%;'>请选择连接类型为 2的 data。</font>"
+        "errorModifyCondition" : "Please select other EnumDef data that access type is 1 or 2.",
+        "errorDeleteCondition" : "[Access type 0, 1 does not have permission to delete.] <br/> <font style='font-weight:bold; font-size:115%;'>Please select only data that access type is 2.</font>"
     },
     "enumDefValue" : {
         "title": "EnumDefValue",
-        "accessTypeCondition" : "连接类型 0: 修改 / 连接类型 1: 增加, 修改 / 连接类型 2: 增加, 修改, 删除",
-        "errorCreateCondition" : "请选择连接类型为 1或是 2的其他 EnumDef data。",
-        "errorDeleteCondition" : "请选择连接类型为 2的 data。"
+        "accessTypeCondition" : "AccessType 0: modify / AccessType 1: create, modify / AccessType 2: create, modify, delete",
+        "errorCreateCondition" : "Please select other EnumDef data that access type is 1 or 2.",
+        "errorDeleteCondition" : "Please select only data that access type is 2."
     },
     "constantDef" : {
         "title": "ConstantDef"
@@ -276,7 +276,7 @@ const obj = {
         "delete": "Delete",
         "success": "Success",
         "fail": "Fail",
-        "noDataToApply": "没有数据可以更改权限。"
+        "noDataToApply": "There is no data to change authority."
     },
     "tfsPolicy": {
         "title": "TFSPolicy",
@@ -295,6 +295,77 @@ const obj = {
         "posQueueTime":"POSQueueTime",
         "posCriticalLayer":"POSCriticalLayer"
     },
+    "modal":{
+        "changeLanguage": {
+            "language": "Language"
+        },
+        "clone": {
+            "title": "MakeClone",
+            "comment": "Please Put in your Clone Name",
+            "existData": "The data already exists"
+        },
+        "create": {
+            "title": "Create List",
+            "key": "Key",
+            "value": "Value",
+            "valueUdfs": "Value Udfs",
+            "gridTitle": "New Add List View",
+            "confirmTitle": "Add",
+            "requiredKey": "Please write a primaryKey.",
+            "mandatoryFlag": "Please write a mandatoryFlag.",
+            "existData": "The added data already exists.",
+            "noData": "No data to add",
+            "success": "Success",
+            "fail": "Fail",
+            "condition": "Condition",
+            "policy": "Policy: ",
+            "noDataToDelete": "No data to delete",
+            "checkDataOfColumn": "The value of {column} must be [{value}].",
+            "diffKey": "Different {column} exist."
+        },
+        "modify": {
+            "title": "Modify List",
+            "panelTitle": "Modify items Select",
+            "gridTitle": "Modify List View",
+            "confirmTitle": "Modify",
+            "dependentValue": "Select a dependent value.",
+            "success": "Success",
+            "fail": "Fail",
+            "associateField": "The selected {param} is associated with {param2}",
+            "noDataToModify": "No data to modify",
+            "impossibleToDelete": "It can no longer be deleted."
+        },
+        "confirm": {
+            "title": "Confirm",
+            "register": "Register [{count}] new {name}.",
+            "modify": "Edit [{count}] {name} data.",
+            "delete": "Delete [{count}] {name}",
+            "apply": "Apply {attributeName}.",
+            "closeAll": "Do you want to close all tabs?"
+        },
+        "validation": {
+            "title" : "Validation"
+        },
+        "summaryView" :{
+            "title" : "Summary View",
+            "stateDataEmpty" : "State Data is empty."
+        },
+        "apply": {
+            "confirmTitle": "Apply"
+        },
+        "policyCopy": {
+            "confirmTitle": "Confirm",
+            "comment": "Do you want to copy the policy as well?"
+        },
+        "specValidation": {
+            "title": "Spec Validation",
+            "objectType": "ObjectType"
+        },
+        "search": {
+            "title": "Search",
+            "result": "Result"
+        }
+    },
     "common": {
         "id":"ID",
         "name":"Name",
@@ -305,8 +376,8 @@ const obj = {
         "information": "Information",
         "history": "History",
         "attributeHistory": "AttributeHistory",
-        "dragDropInfo": "Drag and drop 这个 grid 之间可行。",
-        "dragDropGrid": "Drag and drop 这个 grid 之内可行。"
+        "dragDropInfo": "You can use drag & drop between grid",
+        "dragDropGrid": "Drag and drop is available within the grid"
     },
     "button": {
         "modify":"Modify",
@@ -322,7 +393,6 @@ const obj = {
         "set": "Set",
         "apply": "Apply",
         "search": "Search",
-        "active": "Active",
         "activate": "Activate",
         "deactivate": "NotActive",
         "clone": "MakeClone",
@@ -345,77 +415,6 @@ const obj = {
         "update": "Update",
         "rollUp": "RollUp"
     },
-    "modal":{
-        "changeLanguage": {
-            "language": "Language"
-        },
-        "clone": {
-            "title": "MakeClone",
-            "comment": "请输入要复制的名字。",
-            "existData": "The data already exists"
-        },
-        "create": {
-            "title": "Create List",
-            "key": "Key",
-            "value": "Value",
-            "valueUdfs": "Value Udfs",
-            "gridTitle": "New Add List View",
-            "confirmTitle": "Add",
-            "requiredKey": "请输入PrimaryKey 值。",
-            "mandatoryFlag": "请输入MandatoryFlag 值。",
-            "existData": "当前增加的 data 已存在。",
-            "noData": "No data to add",
-            "success": "Success",
-            "fail": "Fail",
-            "condition": "Condition",
-            "policy": "Policy: ",
-            "noDataToDelete": "没有要删除的 data。",
-            "checkDataOfColumn": "The value of {column} must be [{value}].",
-            "diffKey": "Different {column} exist."
-        },
-        "modify": {
-            "title": "Modify List",
-            "panelTitle": "Modify items Select",
-            "gridTitle": "Modify List View",
-            "confirmTitle": "Modify",
-            "dependentValue": "请选择附属的值。",
-            "success": "Success",
-            "fail": "Fail",
-            "associateField": "当前所选 {param} 与 {param2} 有关联。",
-            "noDataToModify": "没有可删除的数据",
-            "impossibleToDelete": "It can no longer be deleted."
-        },
-        "confirm": {
-            "title": "Confirm",
-            "register": "新注册[{count}]个的 {name} 。",
-            "modify": "修改[{count}]个 {name} data。",
-            "delete": "删除[{count}]个的 {name} 。",
-            "apply": "Apply {attributeName}.",
-            "closeAll": "Do you want to close all tabs?"
-        },
-        "validation": {
-            "title" : "Validation"
-        },
-        "summaryView" :{
-            "title" : "Summary View",
-            "stateDataEmpty" : "State Data 为空。"
-        },
-        "apply": {
-            "confirmTitle": "Apply"
-        },
-        "policyCopy": {
-            "confirmTitle": "Confirm",
-            "comment": "Policy也要一起复制吗?"
-        },
-        "specValidation": {
-            "title": "Spec Validation",
-            "objectType": "ObjectType"
-        },
-        "search": {
-            "title": "Search",
-            "result": "Result"
-        }
-    },
     "info": {
         "title": {
             "success":"Success",
@@ -436,29 +435,29 @@ const obj = {
             "validateCheckedOut":"Edit(CheckedOut)",
             "enterItem":"Enter Item"
         },
-        "startNodeNone": "没有开始Node。",
-        "startNodeTooMuch": "开始Node过多。",
-        "endNodeNone": "没有结束Node。",
-        "endNodeTooMuch": "结束Node过多。",
-        "startNodeArcNone":"没有从开始Node出去的Arc。",
-        "endNodeArcNone":"没有从结束Node进来的Arc",
-        "incomingArcNone":" 没有进入到Node的Arc。",
-        "outgoingArcNone":" 没有从Node出去的Arc。",
-        "sourceNodeNone":" 无source Node。",
-        "targetNodeNone":" 无目标 Node。",
-        "selectData": "请选择数据。",
-        "selectOneData": "请选择一个数据。",
-        "limitCheckCount": "无法选择20个以上。",
-        "enterItem": "请输入{param} 。", 
-        "loseFile":"请进行 CheckedIn。目前作业中的文件未存储。",
-        "validateCheckedOut":"Please CheckedOut.",
-        "requiredField" : "{param} 为必选值。",
+        "startNodeNone": "Start node is none.",
+        "startNodeTooMuch": "Start node is too much.",
+        "endNodeNone": "End node is none.",
+        "endNodeTooMuch": "End node is too much.",
+        "startNodeArcNone":"Start node outgoing arc is none.",
+        "endNodeArcNone":"End node incoming arc is none",
+        "incomingArcNone":" node incoming is none.",
+        "outgoingArcNone":" node outgoing is none.",
+        "sourceNodeNone":" source node is none.",
+        "targetNodeNone":" target node is none.",
+        "selectData": "Please select the data.",
+        "selectOneData": "Please select an one data.",
+        "limitCheckCount": "You can't select more than {checkboxMaxSize}.",
+        "enterItem": "Please enter a {param}.",
+        "loseFile":"Please Save(CheckedIn). You may lose the files you are working on.",
+        "validateCheckedOut":"Please Edit(CheckedOut).",
+        "requiredField" : "{param} is required value.",
         "noMatching" : "No matching values.",
-        "notSameFactories": "相同 Factory 之间才能修改。",
-        "selectFirstData": "请先选择{param} 。",
-        "writeMemo": "请输入内容。",
-        "selectParam": "请选择 {param}",
-        "nodeSelect": "请在树中选择 {param} 节点。",
+        "notSameFactories": "It can be modified between the same factories",
+        "selectFirstData": "Please select {param} first.",
+        "writeMemo": "Please write a content.",
+        "selectParam": "Please select {param}",
+        "nodeSelect": "Please select {param} Node in tree.",
         "notMatchCheckOutUser": "CheckOut user not matched."
     },
     "error": {
@@ -474,23 +473,23 @@ const obj = {
             "drawNodeFail":"Draw Node Fail",
             "invalidUserInfo":"Invalid User Info",
             "saveFileFail":"Save File Fail",
-            "validationFail": "Validation Fail"
+            "validationFail": "Validation Edit(CheckedOut) Fail"
         },
-        "dataEmpty": "无Data。请确认服务器。",
-        "fileEmpty": "文件为空。请确认服务器。",
-        "userIdEmpty":"请输入ID。",
-        "userPwEmpty":"请输入密码。",
-        "loginFailure": "登录失败。请确认用户ID/密码。",
-        "impossibleActiveState": "因所选 Data不是 {param} ，所以不行。",
-        "sameNode":"开始、结束 Node一样。请选择其他Node。",
-        "saveFileFail":"存储失败。",
+        "dataEmpty": "Data is empty. Please check server.",
+        "fileEmpty": "File is empty. Please check server.",
+        "userIdEmpty":"User Id is empty. Please input id.",
+        "userPwEmpty":"Password is empty. Please input password.",
+        "loginFailure": "Login Failure. Please check user id/password.",
+        "impossibleActiveState": "Because it not {param} selected data, it is impossible.",
+        "sameNode":"From, To Node is Same. Please select other node.",
+        "saveFileFail":"Failed to save file.",
         "excel" : {
-            "columnEmpty": "Column Data 为空。",
-            "duplicateData": "存在重复 Data。"
+            "columnEmpty": "Column data is empty.",
+            "duplicateData": "There is duplicate data."
         },
         "changeAuthority": {
-            "goMain" : "權限已更改，您將被移至主屏幕。",
-            "inaccessible" : "您無權訪問{param}菜單。"
+            "goMain" : "Permissions are changed and you go to the main screen.",
+            "inaccessible" : "You do not have access to {param} menu."
         }
     }
 }
@@ -502,16 +501,16 @@ function log() {
                 if (typeof value2 === "object") {
                     for (const [key3, value3] of Object.entries(value2)) {
                         // console.log(`${key1}.${key2}.${key3}`);
-                        console.log(encodeResourceValue(value3));
+                        console.log(value3);
                     }
                 } else {
                     // console.log(`${key1}.${key2}`);
-                    console.log(encodeResourceValue(value2));
+                    console.log(value2);
                 }
             }
         } else {
             // console.log(`${key1}`);
-            console.log(encodeResourceValue(value1));
+            console.log(value1);
         }
     }
 }
