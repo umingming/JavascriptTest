@@ -1,0 +1,10 @@
+const x = 1;
+function outerFunc() {
+    const x = 10;
+    const inner = function() {
+        console.log(x);
+    };
+    return inner;
+}
+const innerFunc = outerFunc();
+innerFunc()
