@@ -109,22 +109,41 @@
 // console.log(person.fullName);
 // console.log(Object.getOwnPropertyDescriptor(person, "fullName"));
 
-class Person {
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+// class Person {
+//     constructor(firstName, lastName) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
 
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`; 
-    }
-    set fullName(name) {
-        [this.firstName, this.lastName]  = name.split(" ");
-    }
+//     get fullName() {
+//         return `${this.firstName} ${this.lastName}`; 
+//     }
+//     set fullName(name) {
+//         [this.firstName, this.lastName]  = name.split(" ");
+//     }
+// }
+// const me = new Person("Youme", "Lee");
+// console.log(`${me.firstName} ${me.lastName}`);
+// console.log(me.fullName);
+// me.fullName = "유미 이";
+// console.log(me.fullName);
+// console.log(Object.getOwnPropertyDescriptor(Person.prototype, "fullName"));
+// console.log(Object.getOwnPropertyNames(me));
+
+// class Person {
+//     constructor(name) {
+//         console.log(this.name);
+//         this.name = name;
+//         console.log(this.name);
+//     }
+// }
+// const me = new Person("Kim");
+
+class Person {
+    name = 'Lee';
+    getName = () => this.name;
+    setName = (name) => this.name = name;
 }
-const me = new Person("Youme", "Lee");
-console.log(`${me.firstName} ${me.lastName}`);
-console.log(me.fullName);
-me.fullName = "유미 이";
-console.log(me.fullName);
-console.log(Object.getOwnPropertyDescriptor(Person.prototype, "fullName"));
+const me = new Person();
+me.setName("유미")
+console.log(me.getName());
