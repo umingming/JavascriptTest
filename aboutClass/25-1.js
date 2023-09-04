@@ -139,11 +139,17 @@
 // }
 // const me = new Person("Kim");
 
-class Person {
-    name = 'Lee';
-    getName = () => this.name;
-    setName = (name) => this.name = name;
+// class Person {
+//     name = 'Lee';
+//     getName = () => this.name;
+//     setName = (name) => this.name = name;
+// }
+// const me = new Person();
+// me.setName("유미")
+// console.log(me.getName());
+
+const Person = "사람";
+{
+    console.log(Person);
+    class Person {};
 }
-const me = new Person();
-me.setName("유미")
-console.log(me.getName());
