@@ -150,6 +150,7 @@
 
 const Person = "사람";
 {
-    console.log(Person);
     class Person {};
+    console.log(typeof Person);
+    console.dir(Person);
 }
