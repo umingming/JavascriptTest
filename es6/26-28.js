@@ -59,9 +59,33 @@ console.log(arrow.call({x: 10}));
 //     }
 // }
 
-class Person {
-    name = "Lee";
-    sayHi = () => console.log(`Hi ${this.name}`);
+// class Person {
+//     name = "Lee";
+//     sayHi = () => console.log(`Hi ${this.name}`);
+// }
+// const person = new Person("Lee");
+// person.sayHi();
+
+class Base {
+    constructor(name) {
+        this.name = name;
+    }
+    sayHi() {
+        return `Hi! ${this.name}`;
+    }
 }
-const person = new Person("Lee");
-person.sayHi();
+
+class Derived extends Base {
+    sayHi = () => `${super.sayHi()} how are you doing?`
+}
+
+const derived = new Derived("Lee");
+console.log(derived.sayHi());
+
+(function () {
+    const foo = () => console.log(arguments);
+    foo(3, 4);
+}(1, 2));
+
+const foo = () => console.log(arguments);
+foo(1, 2);
