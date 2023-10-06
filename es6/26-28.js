@@ -89,3 +89,16 @@ console.log(derived.sayHi());
 
 const foo = () => console.log(arguments);
 foo(1, 2);
+
+class Prefixer {
+	constructor(prefix) {
+		this.prefix = prefix;
+	}
+	add(arr) {
+		return arr.map(function (item) {
+			return this.prefix + item; //TypeError
+		}.bind(this));
+	}
+}
+const prefixer = new Prefixer("test");
+console.log(prefixer.add(["check"]));
