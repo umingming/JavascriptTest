@@ -22,6 +22,14 @@ const obj = {
     '3': '이혜인'
 }
 
-for (const value of arrayLike) {
-    console.log(value);
-}
+// for (const value of arrayLike) {
+//     console.log(value);
+// }
+
+const arr = [];
+arr[0] = 0;
+arr['1'] = 1;
+console.log(arr.length);
+
+arr.splice(1, 1)
+console.log(arr);
