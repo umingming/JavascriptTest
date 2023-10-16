@@ -1,24 +1,52 @@
-const Stack = (function () {
-    function Stack(array = []) {
+// const Stack = (function () {
+//     function Stack(array = []) {
+//         if(!Array.isArray(array)) {
+//             throw new TypeError(`${array} is not an array`)
+//         }
+//         this.array = array;
+//     }
+//     Stack.prototype = {
+//         constructor: Stack,
+//         push(value) {
+//             return this.array.push(value);
+//         },
+//         pop() {
+//             return this.array.pop();
+//         },
+//         entries() {
+//             return [...this.array];
+//         }
+//     };
+//     return Stack;
+// }());
+
+// const stack = new Stack([1, 2]);
+// console.log(stack.entries());
+// stack.push(3);
+// stack.push(4);
+// stack.pop();
+// console.log(stack.entries());
+
+class Stack {
+    #array;
+    
+    constructor(array = []) {
         if(!Array.isArray(array)) {
             throw new TypeError(`${array} is not an array`)
         }
-        this.array = array;
+        this.#array = array;
     }
-    Stack.prototype = {
-        constructor: Stack,
-        push(value) {
-            return this.array.push(value);
-        },
-        pop() {
-            return this.array.pop();
-        },
-        entries() {
-            return [...this.array];
-        }
-    };
-    return Stack;
-}());
+
+    push(value) {
+        return this.#array.push(value)
+    }
+    pop() {
+        return this.#array.pop();
+    }
+    entries() {
+        return [...this.#array];
+    }
+}
 
 const stack = new Stack([1, 2]);
 console.log(stack.entries());
