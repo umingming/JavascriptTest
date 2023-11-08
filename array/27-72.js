@@ -45,3 +45,9 @@ const result = arr.reverse();
 console.log(arr.includes(3, 1));
 
 console.log([NaN].indexOf(NaN));
+
+const multipleArr = [1, [2, [3, [4]]]];
+console.log(multipleArr.flat());
+console.log(multipleArr.flat().flat());
+console.log(multipleArr.flat(2));
+console.log(multipleArr.flat(Infinity));
