@@ -9,8 +9,9 @@
     <div id="box">Hi</div>
 </body>
 <script>
-    const $span = document.createElement("span");
-    $span.appendChild(document.createTextNode("Yumi"), document.createTextNode("Yumi2"));
-    box.appendChild($span);
+    const $container = document.createDocumentFragment();
+    $container.appendChild(document.createTextNode("Yumi"));
+    $container.appendChild(document.createTextNode("Yumi2"));
+    box.appendChild($container);
 </script>
 </html>
