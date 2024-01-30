@@ -9,6 +9,7 @@
     <div id="box">
             Hi
     </div>
+    <button id="btn">button</button>
 </body>
 <script>
     const $container = document.createDocumentFragment();
@@ -19,5 +20,7 @@
     box.insertBefore($container, box.firstChild);
     box.classList.add();
     box.onmouseleave = (e) => console.log(e);
+
+    btn.focus();
 </script>
 </html>
