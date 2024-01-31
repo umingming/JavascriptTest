@@ -22,5 +22,31 @@
     box.onmouseleave = (e) => console.log(e);
 
     btn.focus();
+
+    
+	class Base {
+		#key = ""; // Private
+
+		constructor(key) {
+			this.#key = key;
+			this.content = `#${getIdBy(key)}`;
+		}
+
+		/**
+		 * @returns {string}
+		 */
+		getKey() {
+			return this.#key;
+		}
+
+		/**
+		 * 태그 id로 사용하기 위한 문자열 반환
+		 * @returns {String}
+		 */
+		getId() {
+			return getIdBy(this.#key);
+		}
+	}
+
 </script>
 </html>
