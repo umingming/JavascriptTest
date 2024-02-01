@@ -5,23 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .grid {
+        /* .grid {
             display: grid;
 	        grid-template-columns: repeat(2, 1fr);
 	        grid-auto-rows: minmax(100px, auto);
             grid-gap: 20px;
-        }
-        .grid div {
+        } */
+         div {
+            width: 500px;
+            height: 100px;
             background: salmon;
         }
     </style>
 </head>
 <body>
-    <div class="grid">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-    </div>
+        <div id="box" draggable="true">BOX</div>
+    <script>
+        const {height, width} = screen;
+
+        const currentBox = {x: box.clientLeft, y: box.clientTop};
+        const start = {x: 0, y: 0}
+
+        // box.ondragstart = ({offsetX, offsetY}) => {
+        //     start.x = offsetX;
+        //     start.y = offsetY;
+        // }
+        // box.ondragenter = ({x, y}) => {
+        //     console.log("enter", x, y);
+        // }
+        // box.ondragover = ({x, y}) => {
+        //     console.log("over", x, y);
+        // }
+        // box.ondragend = ({offsetX, offsetY}) => {
+        //     box.style.left = (offsetX - start.x) + "px"
+        //     box.style.top = (offsetY - start.y) + "px"
+        // }
+
+        box.onmousedown = function(event) {
+
+        let shiftX = event.clientX - box.getBoundingClientRect().left;
+        let shiftY = event.clientY - box.getBoundingClientRect().top;
+
+        box.style.position = 'absolute';
+        box.style.zIndex = 1000;
+        document.body.append(box);
+
+        moveAt(event.pageX, event.pageY);
+
+        // 초기 이동을 고려한 좌표 (pageX, pageY)에서
+        // 공을 이동합니다.
+        function moveAt(pageX, pageY) {
+        box.style.left = pageX - shiftX + 'px';
+        box.style.top = pageY - shiftY + 'px';
+        }
+
+        function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+        }
+
+        // mousemove로 공을 움직입니다.
+        document.addEventListener('mousemove', onMouseMove);
+
+        // 공을 드롭하고, 불필요한 핸들러를 제거합니다.
+        box.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        box.onmouseup = null;
+        };
+
+        };
+
+        box.ondragstart = function() {
+        return false;
+        };
+    </script>
 </body>
 </html>
