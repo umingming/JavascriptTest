@@ -19,12 +19,31 @@
     </style>
 </head>
 <body>
-        <div id="box" draggable="true">BOX</div>
+        <div id="box">BOX</div>
     <script>
         const {height, width} = screen;
 
         const currentBox = {x: box.clientLeft, y: box.clientTop};
         const start = {x: 0, y: 0}
+
+        box.onmousedown = ({clientX, clientY}) => {
+            const {left, top} = box.getBoundingClientRect();
+            const shiftX = clientX - left;
+            const shiftY = clientY - top;
+
+            function move({clientX, clientY}) {
+                const x = Math.min(Math.max(clientX - shiftX, 0), width);
+                const y = Math.min(Math.max(clientY - shiftY, 0), height);
+                box.style.transform = `translate(${x}px, ${y}px)`;
+            }
+
+            // box에 걸면 이벤트 제거가 제대로 안 될 수 있음.
+            document.addEventListener("mousemove", move)
+
+            document.onmouseup = () => {
+                document.removeEventListener("mousemove", move);
+            }
+        }
 
         // box.ondragstart = ({offsetX, offsetY}) => {
         //     start.x = offsetX;
@@ -41,42 +60,41 @@
         //     box.style.top = (offsetY - start.y) + "px"
         // }
 
-        box.onmousedown = function(event) {
+        // box.onmousedown = function(event) {
 
-        let shiftX = event.clientX - box.getBoundingClientRect().left;
-        let shiftY = event.clientY - box.getBoundingClientRect().top;
+        // let shiftX = event.clientX - box.getBoundingClientRect().left;
+        // let shiftY = event.clientY - box.getBoundingClientRect().top;
 
-        box.style.position = 'absolute';
-        box.style.zIndex = 1000;
-        document.body.append(box);
+        // box.style.position = 'absolute';
+        // box.style.zIndex = 1000;
+        // document.body.append(box);
 
-        moveAt(event.pageX, event.pageY);
+        // moveAt(event.pageX, event.pageY);
 
-        // 초기 이동을 고려한 좌표 (pageX, pageY)에서
-        // 공을 이동합니다.
-        function moveAt(pageX, pageY) {
-        box.style.left = pageX - shiftX + 'px';
-        box.style.top = pageY - shiftY + 'px';
-        }
+        // // 초기 이동을 고려한 좌표 (pageX, pageY)에서
+        // // 공을 이동합니다.
+        // function moveAt(pageX, pageY) {
+        // box.style.left = pageX - shiftX + 'px';
+        // box.style.top = pageY - shiftY + 'px';
+        // }
 
-        function onMouseMove(event) {
-        moveAt(event.pageX, event.pageY);
-        }
+        // function onMouseMove(event) {
+        //     setTimeout(() => {
+        //         moveAt(event.pageX, event.pageY);
+        //     }, 10);
+        // }
 
-        // mousemove로 공을 움직입니다.
-        document.addEventListener('mousemove', onMouseMove);
+        // // mousemove로 공을 움직입니다.
+        // document.addEventListener('mousemove', onMouseMove);
 
-        // 공을 드롭하고, 불필요한 핸들러를 제거합니다.
-        box.onmouseup = function() {
-        document.removeEventListener('mousemove', onMouseMove);
-        box.onmouseup = null;
-        };
+        // // 공을 드롭하고, 불필요한 핸들러를 제거합니다.
+        // box.onmouseup = function() {
+        // document.removeEventListener('mousemove', onMouseMove);
+        // box.onmouseup = null;
+        // };
 
-        };
+        // };
 
-        box.ondragstart = function() {
-        return false;
-        };
     </script>
 </body>
 </html>
