@@ -45,57 +45,6 @@
                 document.removeEventListener("mousemove", move);
             }
         }
-
-        // box.ondragstart = ({offsetX, offsetY}) => {
-        //     start.x = offsetX;
-        //     start.y = offsetY;
-        // }
-        // box.ondragenter = ({x, y}) => {
-        //     console.log("enter", x, y);
-        // }
-        // box.ondragover = ({x, y}) => {
-        //     console.log("over", x, y);
-        // }
-        // box.ondragend = ({offsetX, offsetY}) => {
-        //     box.style.left = (offsetX - start.x) + "px"
-        //     box.style.top = (offsetY - start.y) + "px"
-        // }
-
-        // box.onmousedown = function(event) {
-
-        // let shiftX = event.clientX - box.getBoundingClientRect().left;
-        // let shiftY = event.clientY - box.getBoundingClientRect().top;
-
-        // box.style.position = 'absolute';
-        // box.style.zIndex = 1000;
-        // document.body.append(box);
-
-        // moveAt(event.pageX, event.pageY);
-
-        // // 초기 이동을 고려한 좌표 (pageX, pageY)에서
-        // // 공을 이동합니다.
-        // function moveAt(pageX, pageY) {
-        // box.style.left = pageX - shiftX + 'px';
-        // box.style.top = pageY - shiftY + 'px';
-        // }
-
-        // function onMouseMove(event) {
-        //     setTimeout(() => {
-        //         moveAt(event.pageX, event.pageY);
-        //     }, 10);
-        // }
-
-        // // mousemove로 공을 움직입니다.
-        // document.addEventListener('mousemove', onMouseMove);
-
-        // // 공을 드롭하고, 불필요한 핸들러를 제거합니다.
-        // box.onmouseup = function() {
-        // document.removeEventListener('mousemove', onMouseMove);
-        // box.onmouseup = null;
-        // };
-
-        // };
-
     </script>
 </body>
 </html>
