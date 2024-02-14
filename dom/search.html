@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        Hello. My name is Lee yumi. Nice meet you!
+    </div>
+
+    <script>
+        /*
+            1. id의 text content를 이유미를 기준으로 split 한다.
+            2. 이유미를 span 태그로 감싸 만든다.
+            3. 가짜 태그를 생성하고, prefix, span, suffix 순으로 넣어준다.
+        */
+        const target = "LEE YUMI";
+        const { outerText } = intro;
+        const [prefix, suffix] =  outerText.split(new RegExp(target, "i"));
+        const [text] = outerText.match(new RegExp(target, "i"));
+        const $span = document.createElement("span");
+	    $span.appendChild(document.createTextNode(text));
+
+        const $container = document.createDocumentFragment();
+        $container.appendChild(document.createTextNode(prefix));
+        $container.appendChild($span);
+        $container.appendChild(document.createTextNode(suffix));
+
+        intro.replaceChild($container, intro.firstChild)
+
+    </script>
+    
+</body>
+</html>
