@@ -28,6 +28,7 @@
         const $span = document.createElement("span");
 	    $span.appendChild(document.createTextNode(text));
 
+        console.log($span instanceof HTMLElement)
         const $container = document.createDocumentFragment();
         $container.appendChild(document.createTextNode(prefix));
         $container.appendChild($span);
