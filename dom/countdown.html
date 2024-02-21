@@ -19,11 +19,7 @@
         min.textContent = String(Math.floor(duration / 60)).padStart(2, 0);
         sec.textContent = String(duration % 60).padStart(2, 0);
 
-        if (duration) {
-            duration--;
-        } else {
-            duration = 60;
-        }
+        duration ? duration-- : duration = 60;
     }
     setInterval(updateTime, 1000);
 </script>
