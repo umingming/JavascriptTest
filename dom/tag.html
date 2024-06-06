@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+            Hi
+    </div>
+    <button id="btn">button</button>
+</body>
+<script>
+    const $container = document.createDocumentFragment();
+    [document.createTextNode("Yumi"), document.createTextNode("Yumi2")].forEach(element => {
+        $container.appendChild(element);
+    })
+    
+    box.insertBefore($container, box.firstChild);
+    box.classList.add();
+    box.onmouseleave = (e) => console.log(e);
+
+    btn.focus();
+
+    
+	class Base {
+		#key = ""; // Private
+
+		constructor(key) {
+			this.#key = key;
+			this.content = `#${getIdBy(key)}`;
+		}
+
+		/**
+		 * @returns {string}
+		 */
+		getKey() {
+			return this.#key;
+		}
+
+		/**
+		 * 태그 id로 사용하기 위한 문자열 반환
+		 * @returns {String}
+		 */
+		getId() {
+			return getIdBy(this.#key);
+		}
+	}
+
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span id="min">00</span>
+        :
+        <span id="sec">00</span>
+    </div>
+</body>
+<script>
+    let duration = 60 * 60;
+
+    function updateTime() {
+        min.textContent = String(Math.floor(duration / 60)).padStart(2, 0);
+        sec.textContent = String(duration % 60).padStart(2, 0);
+        duration ? duration-- : duration = 60;
+    }
+    setInterval(updateTime, 1000);
+</script>
+</html>

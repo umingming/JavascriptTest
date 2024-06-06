@@ -5,23 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .grid {
+        /* .grid {
             display: grid;
 	        grid-template-columns: repeat(2, 1fr);
 	        grid-auto-rows: minmax(100px, auto);
             grid-gap: 20px;
-        }
-        .grid div {
+        } */
+         div {
+            width: 500px;
+            height: 100px;
             background: salmon;
         }
     </style>
 </head>
 <body>
-    <div class="grid">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-    </div>
+        <div id="box">BOX</div>
+    <script>
+        const {height, width} = screen;
+        const currentBox = {x: box.clientLeft, y: box.clientTop};
+        const start = {x: 0, y: 0}
+
+        box.onmousedown = ({clientX, clientY}) => {
+            const {left, top} = box.getBoundingClientRect();
+            const shiftX = clientX - left;
+            const shiftY = clientY - top;
+
+            function move({clientX, clientY}) {
+                const x = Math.min(Math.max(clientX - shiftX, 0), width);
+                const y = Math.min(Math.max(clientY - shiftY, 0), height);
+                box.style.transform = `translate(${x}px, ${y}px)`;
+            }
+
+            // box에 걸면 이벤트 제거가 제대로 안 될 수 있음.
+            document.addEventListener("mousemove", move)
+
+            document.onmouseup = () => {
+                document.removeEventListener("mousemove", move);
+            }
+        }
+    </script>
 </body>
 </html>
