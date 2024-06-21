@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre></pre>
+    <script>
+        const xhr = new XMLHttpRequest();
+
+		//==================== Get
+        // HTTP 요청 초기화
+        xhr.open('GET', '/todos');
+
+        // HTTP 요청 전송
+        xhr.send();
+
+		//==================== Post
+        // 새로운 todo 생성
+        xhr.open('POST', '/todos');
+
+        // HTTP 요청 헤더 설정
+        xhr.setRequestHeader('content-Type', 'application/json');
+
+        // 객체를 직렬화하여 페이로드를 전송
+        xhr.send(JSON.stringify({ id: 4, content: 'Angular', completed: false }));
+
+		//==================== Put
+        // id 특정하여 전체 교체
+        xhr.open('PUT', '/todos/4');
+
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        xhr.send(JSON.stringify({ id: 4, content: 'React', completed: false }));
+
+		//==================== Patch
+        // id 특정하여 전체 교체
+        xhr.open('PATCH', '/todos/4');
+
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        // Id를 4로 특정하여 completed 속성만 교체
+        xhr.send(JSON.stringify({ completed: true }));
+
+        //==================== Delete
+        // id 특정하여 전체 교체
+        xhr.open('DELETE', '/todos/3');
+
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        // 요청 전송
+        xhr.send();
+
+        xhr.onload = () => {
+            // 200: OK, 201: Created
+            if (xhr.status === 200 || xhr.status === 201) {
+                document.querySelector('pre').textContent = xhr.response;
+            }
+            console.log('Load', xhr.readyState, xhr.response, xhr.status, xhr.statusText)
+        }
+
+    </script>
+</body>
+</html>
