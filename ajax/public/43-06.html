@@ -11,11 +11,25 @@
         const xhr = new XMLHttpRequest();
 
 		//==================== Get
-        // HTTP 요청 초기화
-        xhr.open('GET', '/todos');
+        function get(url, successCallback, failureCallback) {
+            // HTTP 요청 초기화
+            xhr.open('GET', url);
+    
+            // HTTP 요청 전송
+            xhr.send();
 
-        // HTTP 요청 전송
-        xhr.send();
+            xhr.onload = () => {
+                // 200: OK, 201: Created
+                if (xhr.status === 200 || xhr.status === 201) {
+                    document.querySelector('pre').textContent = xhr.response;
+                    successCallback(JSON.parse(xhr.response));
+                } else {
+                    failureCallback(JSON.parse(xhr.response));
+                }
+            }
+        }
+
+        get('/todos', console.log, console.error);
 
 		//==================== Post
         // 새로운 todo 생성
@@ -25,7 +39,7 @@
         xhr.setRequestHeader('content-Type', 'application/json');
 
         // 객체를 직렬화하여 페이로드를 전송
-        xhr.send(JSON.stringify({ id: 4, content: 'Angular', completed: false }));
+        xhr.send(JSON.stringify({ id: "4", content: 'Angular', completed: false }));
 
 		//==================== Put
         // id 특정하여 전체 교체
@@ -33,7 +47,7 @@
 
         xhr.setRequestHeader('Content-Type', 'application/json');
 
-        xhr.send(JSON.stringify({ id: 4, content: 'React', completed: false }));
+        xhr.send(JSON.stringify({ id: "4", content: 'React', completed: false }));
 
 		//==================== Patch
         // id 특정하여 전체 교체
@@ -46,20 +60,20 @@
 
         //==================== Delete
         // id 특정하여 전체 교체
-        xhr.open('DELETE', '/todos/3');
+        xhr.open('DELETE', '/todos/4');
 
         xhr.setRequestHeader('Content-Type', 'application/json');
 
         // 요청 전송
         xhr.send();
 
-        xhr.onload = () => {
-            // 200: OK, 201: Created
-            if (xhr.status === 200 || xhr.status === 201) {
-                document.querySelector('pre').textContent = xhr.response;
-            }
-            console.log('Load', xhr.readyState, xhr.response, xhr.status, xhr.statusText)
-        }
+        // xhr.onload = () => {
+        //     // 200: OK, 201: Created
+        //     if (xhr.status === 200 || xhr.status === 201) {
+        //         document.querySelector('pre').textContent = xhr.response;
+        //     }
+        //     console.log('Load', xhr.readyState, xhr.response, xhr.status, xhr.statusText)
+        // }
 
     </script>
 </body>

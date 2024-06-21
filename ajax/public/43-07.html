@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre></pre>
+    <script>
+        //==================== Get
+        function get(url) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                // HTTP 요청 초기화
+                xhr.open('GET', url);
+        
+                // HTTP 요청 전송
+                xhr.send();
+    
+                xhr.onload = () => {
+                    // 200: OK, 201: Created
+                    if (xhr.status === 200 || xhr.status === 201) {
+                        document.querySelector('pre').textContent = xhr.response;
+                        resolve(JSON.parse(xhr.response));
+                    } else {
+                        reject(JSON.parse(xhr.response));
+                    }
+                }
+            })
+        }
+
+        get('/todos')
+            .then(() => get('/todos/1'))
+            .then(console.log)
+
+    </script>
+</body>
+</html>
