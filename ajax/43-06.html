@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest();
+
+        // HTTP 요청 초기화
+        xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+
+        // HTTP 요청 헤더 설정
+        xhr.setRequestHeader('content-Type', 'application/json');
+
+        // HTTP 요청 전송
+        xhr.send();
+
+        xhr.onreadystatechange = () => {
+            console.log('Change', xhr.readyState, xhr.response, xhr.status, xhr.statusText)
+        }
+
+        xhr.onload = () => {
+            console.log('Load', xhr.readyState, xhr.response, xhr.status, xhr.statusText)
+        }
+    </script>
+</body>
+</html>
