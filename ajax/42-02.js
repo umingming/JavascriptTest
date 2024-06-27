@@ -12,6 +12,6 @@ function bar() {
     console.log("bar");
 }
 
-// sleep(foo, 3000);
+sleep(foo, 3000);
 setTimeout(foo, 5);
 setTimeout(bar, 4);
