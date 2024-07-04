@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre id="content"></pre>
+
+    <script>
+        // XMLHttpRequest 객체 생성
+        const xhr = new XMLHttpRequest();
+
+        // HTTP 요청 초기화
+        xhr.open("DELETE", "/todos/2");
+
+        // HTTP 요청 전송
+        xhr.send(JSON.stringify({ completed: false }));
+
+        xhr.onload = () => {
+            if (xhr.status === 200 || xhr.status === 201) {
+                content.textContent = xhr.response;
+            } else {
+                console.error("Error", xhr.status, xhr.statusText)
+            }
+        }
+    </script>
+</body>
+</html>
