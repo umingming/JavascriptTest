@@ -35,3 +35,11 @@ Promise.race([requestData1(), requestData2(), requestData3()])
     .then(res => console.log("race", res))
 Promise.allSettled([requestData1(), requestData2(), requestData3()])
     .then(res => console.log("allSettled", res))
+
+setTimeout(() => console.log(1));
+
+Promise.resolve()
+    .then(() => setTimeout(() => console.log(2)))
+    .then(() => console.log(3));
+
+console.log(4);
