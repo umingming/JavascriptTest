@@ -6,18 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Click me!</button>
+    <button onclick="console.log(event)">Click me!</button>
 
     <script>
         const $button = document.querySelector("button");
 
-        $button.onclick = function () {
-            console.log("Click1");
-        };
+        // $button.onclick = function () {
+        //     console.log("Click1");
+        // };
 
-        $button.onclick = function () {
-            console.log("Click2");
-        };
+        // // $button.onclick = function () {
+        // //     console.log("Click2");
+        // // };
+        // $button.addEventListener("click", function () {
+        //     console.log("Click2");
+        // });
     </script>
 
 </body>
