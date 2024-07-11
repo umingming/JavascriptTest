@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li id="apple">Apple</li>
+        <li id="banana">Banana</li>
+        <li id="orange">Orange</li>
+    </ul>
+
+    <script>
+        const $fruits = document.getElementById("fruits");
+        const $banana = document.getElementById("banana");
+
+        // 1. 캡쳐링 단계에서 이벤트 캐치
+        $fruits.addEventListener("click", e => {
+            console.log(`이벤트 단계: ${e.eventPhase}`);
+            console.log(`이벤트 타깃: ${e.target}`);
+            console.log(`현재 타깃: ${e.currentTarget}`);
+        }, true);
+
+        // 2. 타겟 단계에서 이벤트 캐치
+        $banana.addEventListener("click", e => {
+            console.log(`이벤트 단계: ${e.eventPhase}`);
+            console.log(`이벤트 타깃: ${e.target}`);
+            console.log(`현재 타깃: ${e.currentTarget}`);
+        });
+        
+        // 3. 버블링 단계에서 이벤트 캐치
+        $fruits.addEventListener("click", e => {
+            console.log(`이벤트 단계: ${e.eventPhase}`);
+            console.log(`이벤트 타깃: ${e.target}`);
+            console.log(`현재 타깃: ${e.currentTarget}`);
+        });
+    </script>
+</body>
+</html>
