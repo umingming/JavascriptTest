@@ -39,15 +39,15 @@
         const $banana = document.getElementById("banana");
 
         function activate({ target }) {
+            if (!target.matches("#fruits > li")) return;
+
             [...$fruits.children].forEach($fruit => {
                 $fruit.classList.toggle("active", $fruit === target);
                 $msg.textContent = target.id;
             })
         }
 
-        [...$fruits.children].forEach($fruit => {
-            $fruit.onclick = activate;
-        })
+        $fruits.onclick = activate;
 
         // 1. 캡쳐링 단계에서 이벤트 캐치
         $fruits.addEventListener("click", e => {
@@ -62,7 +62,7 @@
             console.log(`이벤트 타깃: ${e.target}`);
             console.log(`현재 타깃: ${e.currentTarget}`);
         });
-        
+
         // 3. 버블링 단계에서 이벤트 캐치
         $fruits.addEventListener("click", e => {
             console.log(`이벤트 단계: ${e.eventPhase}`);
