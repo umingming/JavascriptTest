@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button class="btn1">button 1</button>
+        <button class="btn2">button 2</button>
+        <button class="btn3">button 3</button>
+    </div>
+
+    <script>
+        /*
+            1. container에 click 이벤트를 위임하여 버튼 색상을 red로 변경한다
+            2. btn2는 클릭 시 버튼 색상을 blue로 변경한다.
+        */
+        const $container = document.querySelector('.container');
+
+        $container.onclick = ({target}) => {
+            if (target.matches(".container > button")) {
+                target.style.color = "red";
+            }
+        }
+
+        const $btn2 = document.querySelector('.btn2');
+        $btn2.onclick = (e) => {
+            e.stopPropagation();
+            $btn2.style.color = "blue";
+        }
+    </script>
+</body>
+</html>
