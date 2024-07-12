@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="handleClick(this)">Click me</button>
+
+    <script>
+        const $button = document.querySelector("button");
+
+        function handleClick(el) {
+            console.log(el)
+            console.log("attribute", this)
+        }
+
+        console.log(this);
+        $button.onclick = function () {
+            console.log("property", this)
+        }
+
+        $button.addEventListener("click", function () {
+            console.log("event listner", this)
+        })
+    </script>
+</body>
+</html>
