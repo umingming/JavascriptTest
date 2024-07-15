@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .todo-list .checked {
+            font-style: italic;
+            color: gray;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-list">
+        <h4>반드시 끝낸다.</h4>
+        <ul></ul>
+    </div>
+    <div class="todo-input">
+        <input>
+        <button id="btn-add">Add</button>
+    </div>
+    <script>
+        /*
+            todo list 개발하기
+
+            - todo를 입력할 input 박스와 그 옆에 추가하기 위한 버튼이 존재
+            - button 클릭하여 추가하면 해당 내용이 차례대로 나온다.
+            - list는 삭제가 가능하다.
+            - 체크박스 선택 시 해당 내용에 줄이 쳐진다.
+        */
+
+        //================================================ List
+        const $list = document.querySelector(".todo-list ul");
+
+        /*
+            1. li, input, button 태그 만든다.
+            2. input 과 버튼을 li에 넣는다.
+            3. list에 해당 요소를 추가한다.
+        */
+        function createTodo(content) {
+            // Input 정의
+            const $checkbox = document.createElement("input");
+            $checkbox.type = "checkbox";
+
+            // Button 정의
+            const $button = document.createElement("button");
+            $button.classList.add("btn-remove");
+            $button.textContent = "X";
+
+            // Todo 정의
+            const $todo = document.createElement("li");
+            const $text = document.createTextNode(content);
+            $todo.appendChild($checkbox)
+            $todo.appendChild($text)
+            $todo.appendChild($button)
+            
+            // Todo 추가
+            $list.appendChild($todo);
+
+            // Button 클릭 시 이벤트 정의
+            $button.addEventListener("click", () => {
+                $list.removeChild($todo);
+            })
+
+            // Input toggleEvent
+            $checkbox.addEventListener("change", ({ target: { checked } }) => {
+                $todo.classList.toggle("checked", checked);
+            })
+        }
+
+        //================================================ Input
+        const $input = document.querySelector(".todo-input input");
+        const $btnAdd = document.querySelector("#btn-add");
+
+        $btnAdd.addEventListener("click", () => {
+            const { value } = $input;
+            createTodo(value);
+
+            // $input초기화
+            $input.value = "";
+        })
+
+
+    </script>
+</body>
+</html>
