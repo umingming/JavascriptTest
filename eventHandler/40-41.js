@@ -1,4 +1,4 @@
-
+const name = "유미";
 class App {
     constructor() {
         this.$button = document.querySelector('button');

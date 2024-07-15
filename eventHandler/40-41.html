@@ -7,6 +7,13 @@
 </head>
 <body>
     <button class="btn">0</button>
-    <script type="module" src="40-41.mjs"></script>
+    <script type="module" src="40-41.js">
+        const foo = "foo";
+        console.log("module", foo)
+    </script>
+    <script>
+        console.log("name", typeof name)
+        console.log("foo", foo)
+    </script>
 </body>
 </html>
