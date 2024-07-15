@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #modal {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid black;
+        }
+        #modal.off {
+            display: none;
+        }
+        #modal .modal-header {
+            background: gray;
+            text-align: end;
+            height: 30px;
+        }
+        #modal .modal-body {
+            text-align: center;
+            height: calc(100% - 60px);
+        }
+        #modal .modal-footer {
+            text-align: end;
+            position: relative;
+            bottom: 0;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button id="bth-show">Show</button>
+    <div id="modal" class="off">
+        <div class="modal-header">
+            <button id="bth-hide">X</button>
+        </div>
+        <div class="modal-body">
+            모달입니다.
+        </div>
+    </div>
+
+    <script>
+        /*
+            버튼으로 모달을 조작해보자.
+
+            1. 버튼이 랜더링된다.
+            2. 버튼 클릭 시, close 버튼이 있는 모달이 나온다.
+            3. close 버튼으로 모달을 닫늗다.
+        */
+
+        const $btnShow = document.querySelector("#bth-show");
+        const $btnHide = document.querySelector("#bth-hide");
+
+        $btnShow.addEventListener("click", () => {
+            document.getElementById("modal").classList.remove("off");
+        });
+
+        $btnHide.addEventListener("click", () => {
+            document.getElementById("modal").classList.add("off");
+        });
+    </script>
+</body>
+</html>
