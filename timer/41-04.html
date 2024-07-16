@@ -21,7 +21,7 @@
             let timerId;
             return event => {
                 if (timerId) clearTimeout(timerId);
-                timerId = setTimeout(callback, delay);
+                timerId = setTimeout(callback, delay, event);
             }
         }
 
@@ -39,7 +39,8 @@
         $button.addEventListener("click", () => {
             $normalMsg.textContent = Number($normalMsg.textContent) + 1;
         });
-        $button.addEventListener("click", debounce(() => {
+        $button.addEventListener("click", debounce((event) => {
+            console.log(event);
             $debounceMsg.textContent = Number($debounceMsg.textContent) + 1;
         }, 500));
         $button.addEventListener("click", throttle(() => {
