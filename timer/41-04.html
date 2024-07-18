@@ -17,7 +17,7 @@
         const $debounceMsg = document.querySelector(".debounce-msg");
         const $throttleMsg = document.querySelector(".throttle-msg");
 
-        const debounce = (callback, delay) => {
+        function debounce(callback, delay) {
             let timerId;
             return event => {
                 if (timerId) clearTimeout(timerId);
@@ -25,7 +25,7 @@
             }
         }
 
-        const throttle = (callback, delay) => {
+        function throttle(callback, delay) {
             let timerId;
             return event => {
                 if (timerId) return;
