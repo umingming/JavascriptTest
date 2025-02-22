@@ -64,6 +64,7 @@ const style = `
     font-size: 18px;
     line-height: 20px;
 }
+
 `;
 
 const body = `
